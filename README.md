@@ -28,9 +28,9 @@ Si necesitas IP fija, edita el script y cambia:
 
 ```bash
 STATIC_IP_ENABLED="yes"
-STATIC_IP="192.168.1.97"
-STATIC_GATEWAY="192.168.1.1"
-STATIC_DNS="192.168.1.1, 8.8.8.8"
+STATIC_IP="192.168.100.97"
+STATIC_GATEWAY="192.168.100.1"
+STATIC_DNS="192.168.100.1, 8.8.8.8"
 ```
 
 ---
@@ -42,10 +42,11 @@ Las instalaciones tradicionales de OwnCloud requieren múltiples pasos manuales 
 
 **Solución:**  
 Este script automatiza la instalación completa de OwnCloud en Ubuntu 22.04, incluyendo:
-- Apache2 + PHP 7.4 con todas las extensiones necesarias (incluyendo LDAP)
+- Apache2 + PHP 7.4 con todas las extensiones necesarias (**incluyendo php7.4-ldap**)
 - MySQL con base de datos y usuario optimizados
 - Descarga y configuración automática de OwnCloud
-- Instalación y habilitación de la aplicación `user_ldap`
+- **Instalación de la app `user_ldap` desde el mercado** (`occ market:install user_ldap`)
+- **Habilitación automática de la app LDAP** (`occ app:enable user_ldap`)
 - Configuración opcional de IP estática
 - Trusted domains configuradas automáticamente
 
@@ -118,31 +119,49 @@ http://IP_DEL_SERVIDOR
 
 ### Captura del dashboard
 
-![Dashboard OwnCloud](images/dashboard-owncloud.png)
+![Dashboard OwnCloud](Dashboard_OwnCloud.png)
 
 ### Captura de la pantalla de login
 
-![Login OwnCloud](images/login-owncloud.png)
+![Login OwnCloud](Login_OwnCloud.png)
 
 ### Captura del asistente de instalación web
 
-![Asistente de instalación web](images/instalacion-web.png)
+![Asistente de instalación web](Instalacion_web.png)
 
 ---
 
 ## 🔗 CONFIGURAR LDAP / ACTIVE DIRECTORY
 
-La aplicación `user_ldap` ya está instalada y habilitada automáticamente.
+La aplicación `user_ldap` ya está **instalada y habilitada automáticamente** por el script.
 
-### Pasos para configurar LDAP:
+### Verificar en la terminal:
 
-1. Ve a **Ajustes** → **Administración** → **LDAP / Active Directory**
-2. Configura la conexión a tu servidor LDAP/AD
-3. Prueba la conexión y guarda la configuración
+```bash
+cd /var/www/html/owncloud
+sudo -u www-data php occ app:list | grep ldap
+```
 
-### Captura de configuración LDAP (opcional)
+Debes ver `user_ldap` en la lista de aplicaciones habilitadas.
 
-![Configuración LDAP](images/ldap-config.png)
+### Configurar LDAP en la interfaz web:
+
+1. Inicia sesión como administrador
+2. Ve a **Ajustes** → **Administración** → **LDAP / Active Directory**
+3. Configura la conexión a tu servidor LDAP/AD
+
+---
+
+## 📥 CLIENTE DE ESCRITORIO (WINDOWS)
+
+Para conectar clientes Windows al servidor OwnCloud, descarga el cliente oficial:
+
+🔗 [https://owncloud.com/desktop-app/](https://owncloud.com/desktop-app/)
+
+Una vez instalado:
+1. Ingresa la URL de tu servidor: `http://IP_DEL_SERVIDOR`
+2. Usa las credenciales de tu usuario administrador
+3. Selecciona las carpetas a sincronizar
 
 ---
 
@@ -174,11 +193,12 @@ owncloud-ubuntu22-installer/
 ├── install.sh
 ├── README.md
 └── images/
-    ├── dashboard-owncloud.png
-    ├── login-owncloud.png
-    ├── instalacion-web.png
-    └── ldap-config.png (opcional)
+    ├── Dashboard_OwnCloud.png
+    ├── Login_OwnCloud.png
+    └── Instalacion_web.png
 ```
+
+> ⚠️ **Nota:** Si las imágenes están en la raíz del repositorio y no en una carpeta `images/`, actualiza las rutas del README. En tu caso, veo que las imágenes están en la raíz, así que el README ya está apuntando correctamente a `Dashboard_OwnCloud.png`, `Login_OwnCloud.png` e `Instalacion_web.png`.
 
 ---
 

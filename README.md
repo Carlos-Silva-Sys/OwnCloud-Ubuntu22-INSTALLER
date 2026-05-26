@@ -32,7 +32,7 @@ docker run -d \
 
 ```bash
 git clone https://github.com/Carlos-Silva-Sys/owncloud-ubuntu22-installer.git
-cd owncloud-ubuntu22-installer/script-nativo
+cd owncloud-ubuntu22-installer
 chmod +x install.sh
 sudo ./install.sh
 ```
@@ -74,9 +74,8 @@ Una vez instalado:
 
 ```
 owncloud-ubuntu22-installer/
-├── README.md                 ← Este archivo
-├── script-nativo/
-│   └── install.sh            ← Script de instalación nativa
+├── README.md
+├── install.sh
 └── images/
     ├── Login_owncloud.png
     ├── Dashboard_owncloud.png

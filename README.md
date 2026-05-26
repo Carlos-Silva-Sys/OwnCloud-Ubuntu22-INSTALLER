@@ -35,27 +35,27 @@ OC_ADMIN_PASS='AdminPassword123'        # ⚠️ CAMBIAR: Contraseña del admini
 
 ### 2. REQUISITOS DEL SISTEMA
 
-- Ubuntu 22.04 LTS **limpio** (sin Apache/MySQL preinstalado).
-- Conexión a Internet activa.
-- Ejecutar como `root` o con `sudo`.
-- Puertos `80` (HTTP) disponibles.
+- Ubuntu 22.04 LTS **limpio** (sin Apache/MySQL preinstalado)
+- Conexión a Internet activa
+- Ejecutar como root o con sudo
+- Puertos 80 disponibles
 
 ---
 
 ## 📋 Descripción
 
 **Problema que resuelve:**  
-Las instalaciones tradicionales de OwnCloud requieren múltiples pasos manuales (Apache, MySQL, PHP, configuración de *trusted domains* y creación del usuario administrador). Este proceso puede tomar horas y es propenso a errores.
+Las instalaciones tradicionales de OwnCloud requieren múltiples pasos manuales (Apache, MySQL, PHP, configuración de trusted domains y creación del usuario administrador). Este proceso puede tomar horas y es propenso a errores.
 
 **Solución:**  
 Este script automatiza la instalación completa de OwnCloud en Ubuntu 22.04, incluyendo:
-- Apache2 + PHP 7.4 con todas las extensiones necesarias.
-- MySQL con base de datos y usuario optimizados.
-- Descarga y configuración automática de OwnCloud.
-- **Configuración automática del usuario administrador de OwnCloud** (sin intervención web).
-- Instalación y habilitación de la app LDAP.
-- *Trusted domains* configuradas automáticamente.
-- Firewall configurado (con preservación del puerto SSH).
+- Apache2 + PHP 7.4 con todas las extensiones necesarias
+- MySQL con base de datos y usuario optimizados
+- Descarga y configuración automática de OwnCloud
+- **Configuración automática del usuario administrador de OwnCloud** (sin intervención web)
+- Instalación y habilitación de la app LDAP
+- Trusted domains configuradas automáticamente
+- Firewall configurado (con preservación del puerto SSH)
 
 ---
 
@@ -92,6 +92,14 @@ chmod +x install.sh
 nano install.sh
 ```
 
+Busca y cambia estas tres variables:
+
+```bash
+DB_ROOT_PASS='CambiarRootPassword123'   # Contraseña para root de MySQL
+DB_USER_PASS='CambiarUserPassword123'   # Contraseña para usuario de OwnCloud (base de datos)
+OC_ADMIN_PASS='AdminPassword123'        # Contraseña del administrador de OwnCloud
+```
+
 ### 4. Ejecutar como root
 
 ```bash
@@ -117,9 +125,9 @@ http://IP_DEL_SERVIDOR
 
 ### Configurar LDAP / Active Directory
 
-1. Inicia sesión como administrador.
-2. Ve a **Ajustes** → **Administración** → **LDAP / Active Directory**.
-3. Configura la conexión a tu servidor LDAP/AD.
+1. Inicia sesión como administrador
+2. Ve a **Ajustes** → **Administración** → **LDAP / Active Directory**
+3. Configura la conexión a tu servidor LDAP/AD
 
 ### Captura del dashboard
 
@@ -138,9 +146,9 @@ Para conectar clientes Windows al servidor OwnCloud, descarga el cliente oficial
 🔗 [https://owncloud.com/desktop-app/](https://owncloud.com/desktop-app/)
 
 Una vez instalado:
-1. Ingresa la URL de tu servidor: `http://IP_DEL_SERVIDOR`.
-2. Usa las credenciales de tu usuario administrador (`admin` / la contraseña que definiste).
-3. Selecciona las carpetas a sincronizar.
+1. Ingresa la URL de tu servidor: `http://IP_DEL_SERVIDOR`
+2. Usa las credenciales de tu usuario administrador (`admin` / la contraseña que definiste)
+3. Selecciona las carpetas a sincronizar
 
 ---
 

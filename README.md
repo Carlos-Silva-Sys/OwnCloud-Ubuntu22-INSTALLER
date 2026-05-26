@@ -43,13 +43,26 @@ sudo ./install.sh
 
 ## 📸 CAPTURAS DE PANTALLA
 
-### Dashboard
-
-![Dashboard OwnCloud](images/Dashboard_owncloud.png)
-
 ### Pantalla de login
 
 ![Login OwnCloud](images/Login_owncloud.png)
+
+### Dashboard principal
+
+![Dashboard OwnCloud](images/Dashboard_owncloud.png)
+
+---
+
+## 📥 CLIENTE DE ESCRITORIO (WINDOWS)
+
+Para sincronizar archivos con tu PC, descarga el cliente oficial:
+
+🔗 [https://owncloud.com/desktop-app/](https://owncloud.com/desktop-app/)
+
+Una vez instalado:
+1. Ingresa la URL de tu servidor: `http://IP_DEL_SERVIDOR`
+2. Usa las credenciales de tu usuario administrador
+3. Selecciona las carpetas a sincronizar
 
 ---
 
@@ -61,8 +74,8 @@ owncloud-ubuntu22-installer/
 ├── script-nativo/
 │   └── install.sh            ← Script de instalación nativa
 └── images/
-    ├── Dashboard_owncloud.png
     ├── Login_owncloud.png
+    ├── Dashboard_owncloud.png
     └── Instalacion_web.png
 ```
 

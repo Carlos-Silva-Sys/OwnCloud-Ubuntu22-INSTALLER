@@ -64,16 +64,15 @@ sudo ./install.sh
 
 ---
 
-## 📥 CLIENTE DE ESCRITORIO (WINDOWS)
+## 📱 APPS MÓVILES Y ESCRITORIO
 
-Para sincronizar archivos con tu PC, descarga el cliente oficial:
+**Accede a tus archivos desde cualquier dispositivo:**
 
-🔗 [https://owncloud.com/desktop-app/](https://owncloud.com/desktop-app/)
-
-Una vez instalado:
-1. Ingresa la URL de tu servidor: `http://IP_DEL_SERVIDOR`
-2. Usa las credenciales de tu usuario administrador
-3. Selecciona las carpetas a sincronizar
+| Plataforma | Enlace |
+|------------|--------|
+| 🖥️ **Windows / Linux / Mac** | [owncloud.com/desktop-app/](https://owncloud.com/desktop-app/) |
+| 📱 **Android** | [OwnCloud en Google Play](https://play.google.com/store/apps/details?id=com.owncloud.android) |
+| 🍏 **iPhone / iPad** | [OwnCloud en App Store](https://apps.apple.com/app/owncloud/id1359588234) |
 
 ---
 

@@ -131,11 +131,11 @@ http://IP_DEL_SERVIDOR
 
 ### Captura del dashboard
 
-![Dashboard OwnCloud](images/Dashboard_OwnCloud.png)
+![Dashboard OwnCloud](images/Dashboard_owncloud.png)
 
 ### Captura de la pantalla de login
 
-![Login OwnCloud](images/Login_OwnCloud.png)
+![Login OwnCloud](images/Login_owncloud.png)
 
 ---
 
@@ -177,8 +177,8 @@ owncloud-ubuntu22-installer/
 ├── install.sh
 ├── README.md
 └── images/
-    ├── Dashboard_OwnCloud.png
-    ├── Login_OwnCloud.png
+    ├── Dashboard_owncloud.png
+    ├── Login_owncloud.png
     └── Instalacion_web.png
 ```
 
